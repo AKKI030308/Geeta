@@ -1,0 +1,938 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Content - Exclusive Access</title>
+    
+    <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
+  <meta property="og:title" content="Premium Content - Exclusive Access" />
+  <meta property="og:description" content="Unlock exclusive premium content and join our private Telegram group." />
+  <meta property="og:image" content="/media/picc.jpg" /> <!-- Replace with your image -->
+  <meta property="og:url" content="https://niharikax.com/" />
+  <meta property="og:type" content="NiharikaX" />
+
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif; background: #000; color: #fff; line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 430px; margin: 0 auto; background: #000; min-height: 100vh; position: relative; }
+
+        
+
+        /* Header */
+        .header { background: linear-gradient(180deg, #1a1a1a 0%, #000 100%); padding: 70px 24px 40px; text-align: center; position: relative; will-change: transform; }
+        .profile-container { position: relative; margin-bottom: 20px; }
+        .profile-img { width: 100px; height: 100px; border-radius: 24px; background: linear-gradient(135deg, #FF6B9D 0%, #C766EF 50%, #00C9FF 100%); margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 8px 32px rgba(255, 107, 157, 0.3); position: relative; overflow: hidden; }
+        .profile-img::before { content: ''; position: absolute; inset: 2px; background: #000; border-radius: 22px; z-index: 1; }
+        .profile-img span { position: relative; z-index: 2; }
+        .verified-badge { position: absolute; bottom: -5px; right: -5px; width: 32px; height: 32px; background: #007AFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #000; font-size: 14px; }
+        .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; background: linear-gradient(135deg, #FF6B9D, #C766EF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .header p { color: rgba(255,255,255,0.7); font-size: 16px; font-weight: 400; }
+
+        .content { padding: 0 24px; }
+
+        /* Subscription Card */
+        .subscription-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border-radius: 24px; padding: 20px 24px; margin-bottom: 32px; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; position: relative; overflow: hidden; }
+        .subscription-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); }
+        .price-container { margin-bottom: 20px; }
+        .price { font-size: 56px; font-weight: 900; background: linear-gradient(135deg, #FF6B9D, #C766EF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+        .currency { font-size: 24px; vertical-align: super; }
+        .billing { color: rgba(255,255,255,0.6); font-size: 16px; margin-top: 8px; }
+        .cta-button { background: linear-gradient(135deg, #FF6B9D 0%, #C766EF 100%); color: #fff; padding: 18px 48px; border: none; border-radius: 50px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block; box-shadow: 0 8px 32px rgba(255, 107, 157, 0.4); position: relative; overflow: hidden; }
+        .cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s ease; }
+        .cta-button:hover::before { left: 100%; }
+        .cta-button:active { transform: scale(0.98); }
+
+        /* Section titles */
+        .section-title { font-size: 28px; font-weight: 800; margin-bottom: 24px; text-align: left; color: #fff; }
+
+        /* Features */
+        .features { margin: 48px 0; }
+        .features-grid { display: grid; gap: 16px; }
+        .feature-item { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); padding: 24px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; transition: all 0.3s ease; }
+        .feature-item:hover { background: rgba(255, 255, 255, 0.05); transform: translateY(-2px); }
+        .feature-icon { width: 52px; height: 52px; background: linear-gradient(135deg, #FF6B9D, #C766EF); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-right: 16px; flex-shrink: 0; font-size: 20px; }
+        .feature-text { flex: 1; }
+        .feature-title { font-weight: 700; margin-bottom: 4px; color: #fff; font-size: 16px; }
+        .feature-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.4; }
+
+        /* --- DEMO VIDEOS (URL-BASED) --- */
+        .demos { margin: 48px 0; }
+
+        /* URL input pill */
+        
+        
+        
+        
+
+        /* Horizontal scroller */
+        .video-scroller { display: flex; gap: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; padding-bottom: 4px; scroll-snap-type: x mandatory; }
+        .video-scroller::-webkit-scrollbar { height: 6px; }
+        .video-scroller::-webkit-scrollbar-track { background: rgba(255,255,255,0.08); }
+        .video-scroller::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #FF6B9D, #C766EF); border-radius: 3px; }
+
+        .video-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border-radius: 20px; overflow: hidden; position: relative; border: 1px solid rgba(255, 255, 255, 0.1); flex: 0 0 45%; /* 72 shows ~1.4 cards on mobile */ max-width: 72%; aspect-ratio: 2/3; scroll-snap-align: start; }
+        .video-media { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .video-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 14px; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%); }
+        .video-title { font-size: 14px; font-weight: 700; color: #fff; }
+        .video-duration { font-size: 12px; color: rgba(255,255,255,0.7); }
+
+        /* Stats */
+        .stats { background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(199, 102, 239, 0.1) 100%); margin: 32px -24px; padding: 48px 24px; text-align: center; backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 255, 255, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .stats h2 { font-size: 24px; font-weight: 800; margin-bottom: 32px; color: #fff; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .stat-item { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); padding: 24px 16px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .stat-number { font-size: 32px; font-weight: 900; margin-bottom: 8px; background: linear-gradient(135deg, #FF6B9D, #C766EF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-label { font-size: 12px; color: rgba(255,255,255,0.7); font-weight: 500; }
+
+        /* Testimonial */
+        .testimonial { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); padding: 32px 24px; margin: 48px 0; border-radius: 24px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .testimonial-avatar { width: 56px; height: 56px; background: linear-gradient(135deg, #00C9FF, #92FE9D); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .quote { font-size: 16px; color: rgba(255,255,255,0.8); margin-bottom: 16px; line-height: 1.6; font-style: italic; }
+        .reviewer { font-weight: 700; color: #fff; font-size: 14px; }
+        .rating { color: #FFD700; margin-bottom: 8px; font-size: 18px; }
+
+        /* Footer CTA */
+        .footer-cta { padding: 48px 24px 80px; text-align: center; }
+        .footer-title { font-size: 28px; font-weight: 800; margin-bottom: 16px; color: #fff; }
+        .footer-subtitle { color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 16px; line-height: 1.5; }
+
+        /* Loading animation */
+        .loading { display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Responsive */
+        @media (max-width: 375px) {
+            .container { max-width: 375px; }
+            .price { font-size: 48px; }
+            .video-card { flex-basis: 82%; max-width: 82%; }
+            .stats-grid { grid-template-columns: 1fr; gap: 16px; }
+        }
+
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #FF6B9D, #C766EF); border-radius: 2px; }
+    </style>
+<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+</head>
+<body>
+    <div class="container">
+       
+
+ 
+
+
+<!-- Header -->
+<div class="header">
+  <div class="profile-container" style="position:relative; display:inline-block;">
+    <div class="profile-img" style="position:relative; background:none;">
+      <img src="/media/picc.jpg"
+           alt="Profile"
+           style="width:100%; height:100%; object-fit:cover; border-radius:22px;" />
+    </div>
+    <!-- Verified Badge (outside top-right corner of image) -->
+    <div style="
+        position:absolute; 
+        top:-12px; right:-12px;
+        width:28px; height:28px; border-radius:50%;
+        background:#007AFF; color:#fff; border:2px solid #000;
+        display:flex; align-items:center; justify-content:center;
+        font-size:14px; font-weight:700; z-index:5;">
+      ✓
+    </div>
+  </div>
+  <h1>Premium Access</h1>
+  <p id="dynamicText" style="
+   color:rgba(255,255,255,0.85);
+   font-size:15px;
+   font-weight:500;
+   margin-top:6px;
+   transition:opacity .5s ease;">
+   Exclusive Content • <span style="font-weight:700;color:#4CAF50;">3,000+ Subscribers</span> joined
+</p>
+
+<script>
+  (function(){
+    const el = document.getElementById("dynamicText");
+    const options = [
+      'Exclusive Content • <span style="font-weight:700;color:#4CAF50;">3,000+ Subscribers</span> joined',
+      'Exclusive Content • <span style="font-weight:700;color:#4CAF50;">100+ Videos</span> inside'
+    ];
+    let idx = 0;
+
+    setInterval(()=>{
+      // fade out
+      el.style.opacity = 0;
+      setTimeout(()=>{
+        idx = (idx+1)%options.length;
+        el.innerHTML = options[idx];
+        // fade in
+        el.style.opacity = 1;
+      }, 500); // match transition duration
+    }, 3000);
+  })();
+</script>
+</div>
+      
+ <style>
+  .profile-img::before { display: none !important; }
+</style>     
+      
+      
+      
+        <div class="content">
+            
+            
+            
+<!-- Subscription Pricing (Premium App-Style, ribbon fixed) -->
+<div class="subscription-card fade-in" style="max-width:380px;margin:0 auto;padding:28px 22px 22px;border-radius:22px;background:
+linear-gradient(180deg,#0a0f1e 0%,#0a0c16 100%);
+color:#fff;box-shadow:0 18px 40px rgba(0,0,0,0.5);
+font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+position:relative;isolation:isolate;overflow:hidden;">
+
+  <!-- Glow ring -->
+  <div style="position:absolute;inset:auto -20% -40% -20%;height:260px;background:radial-gradient(60% 60% at 50% 50%, rgba(61,220,151,.25),rgba(61,220,151,0) 60%);filter:blur(30px);z-index:0;"></div>
+
+<!-- Top-right ribbon -->
+<div id="ribbon" aria-label="Flash Sale"
+     style="position:absolute;top:12px;right:12px;
+     padding:7px 14px;border-radius:999px;
+     background:linear-gradient(90deg,#ff512f,#dd2476);
+     color:#fff;font-weight:800;font-size:9px;letter-spacing:.5px;
+     z-index:3;box-shadow:0 8px 24px rgba(255,81,47,.35);
+     border:1px solid rgba(255,255,255,.25);
+     backdrop-filter:blur(6px);
+     background-size:200% auto;
+     background-image:linear-gradient(90deg,#ff512f,#dd2476,#ff512f);
+     animation:shimmer 4s linear infinite;">
+  80% OFF
+</div>
+
+<style>
+@keyframes shimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+</style>
+
+  <!-- Countdown -->
+  <div style="position:relative;z-index:1;margin-top:6px;margin-bottom:16px;">
+    <div aria-live="polite" style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:14px;
+        background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(6px);">
+        <span style="font-size:12px;letter-spacing:.3px;text-transform:uppercase;opacity:.85;">Ends in</span>
+        <div id="timer" style="display:flex;gap:8px;font-variant-numeric:tabular-nums;align-items:center;">
+          <span style="display:inline-flex;flex-direction:column;align-items:center;">
+            <span id="t-h" style="min-width:48px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.10);
+              box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 2px 10px rgba(0,0,0,.28);font-weight:900;font-size:18px;text-align:center;line-height:1;">00</span>
+            <small style="margin-top:4px;font-size:10px;opacity:.75;letter-spacing:.2px;">Hrs</small>
+          </span>
+          <span style="font-weight:800;opacity:.6;">:</span>
+          <span style="display:inline-flex;flex-direction:column;align-items:center;">
+            <span id="t-m" style="min-width:48px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.10);
+              box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 2px 10px rgba(0,0,0,.28);font-weight:900;font-size:18px;text-align:center;line-height:1;">00</span>
+            <small style="margin-top:4px;font-size:10px;opacity:.75;letter-spacing:.2px;">Min</small>
+          </span>
+          <span style="font-weight:800;opacity:.6;">:</span>
+          <span style="display:inline-flex;flex-direction:column;align-items:center;">
+            <span id="t-s" style="min-width:48px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.10);
+              box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 2px 10px rgba(0,0,0,.28);font-weight:900;font-size:18px;text-align:center;line-height:1;">00</span>
+            <small style="margin-top:4px;font-size:10px;opacity:.75;letter-spacing:.2px;">Sec</small>
+          </span>
+        </div>
+      </div>
+      <!-- tiny lock/secure -->
+      <div style="display:flex;align-items:center;gap:6px;opacity:.8;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex:0 0 16px">
+          <path d="M7 10V8a5 5 0 1 1 10 0v2" stroke="#a6ffcf" stroke-width="2"/>
+          <rect x="5" y="10" width="14" height="10" rx="2" stroke="#a6ffcf" stroke-width="2"/>
+        </svg>
+        <span style="font-size:11px;">Special Price</span>
+      </div>
+    </div>
+
+    <!-- urgency progress -->
+    <div style="margin-top:10px;height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;">
+      <div id="urgencyBar" style="height:100%;width:100%;background:linear-gradient(90deg,#3ddc97,#1fbf73);box-shadow:0 6px 16px rgba(61,220,151,.35);"></div>
+    </div>
+  </div>
+
+  <!-- Price Block -->
+  <div class="price-container" style="position:relative;z-index:1;text-align:center;">
+    <div id="origPrice" style="
+  position:relative;
+  font-size:25px;
+  color:rgba(255,255,255,0.6);
+  margin-bottom:6px;
+  display:inline-block;
+  padding:2px 6px;
+  line-height:1;
+">
+  ₹1399
+  <!-- animated white strike -->
+  <span style="
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:2px;
+    background:red;
+    transform:scaleX(0);
+    transform-origin:center center;
+    animation: strikeAnim 4s ease-in-out infinite;
+    pointer-events:none;
+  "></span>
+</div><br>
+
+<style>
+@keyframes strikeAnim {
+  0%   { transform:scaleX(0); opacity:0; }
+  10%  { transform:scaleX(1); opacity:1; } /* draw strike */
+  90%  { transform:scaleX(1); opacity:1; } /* keep strike visible */
+  100% { transform:scaleX(0); opacity:0; } /* reset */
+}
+</style>
+    <div id="dealPrice" style="font-size:45px;font-weight:900;letter-spacing:-.6px;line-height:1.05;margin:2px 0 6px;position:relative;display:inline-block;overflow:hidden;">
+  <span style="font-size:.75em;opacity:.95;margin-right:2px;">₹</span>
+  <span id="priceValue">1399</span>
+  <!-- shimmer overlay -->
+  <span id="shimmer" style="
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:80%;
+    height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+    transform:skewX(-20deg);
+    pointer-events:none;
+  "></span>
+</div>
+
+<script>
+(function(){
+  let el = document.getElementById("priceValue");
+  let shimmer = document.getElementById("shimmer");
+  let start = 1399;
+  let end = 09;
+  let duration = 2000; // ms
+  let steps = 60;
+  let stepTime = duration / steps;
+  let current = start;
+  let decrement = (start - end) / steps;
+
+  let timer = setInterval(()=>{
+    current -= decrement;
+    if(current <= end){
+      current = end;
+      clearInterval(timer);
+      // trigger shimmer
+      shimmer.animate(
+        [
+          { left: "-100%" },
+          { left: "120%" }
+        ],
+        {
+          duration: 1200,
+          easing: "ease-in-out"
+        }
+      );
+    }
+    el.textContent = Math.round(current);
+  }, stepTime);
+})();
+</script><br>
+    <div id="dealBadge" style="display:inline-block;padding:7px 14px;border-radius:999px;background:
+      linear-gradient(90deg,#6affb0,#42e18c);color:#082215;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.4px;
+      box-shadow:0 8px 22px rgba(66,225,140,.35);">Limited Time Offer</div>
+
+    <div style="margin-top:10px;font-size:13px;color:#50e38a;font-weight:600;">Lifetime Validity – Pay Once, Enjoy Forever</div>
+  </div>
+
+ <!-- CTA -->
+<a href="/api/create-order" onclick="handlePayment(event)"
+   style="position:relative;z-index:1;margin-top:18px;display:flex;align-items:center;justify-content:center;gap:10px;
+   text-decoration:none;background:linear-gradient(180deg,#3ddc97,#1fbf73);color:#062416;
+   padding:14px 16px;border-radius:16px;font-weight:900;letter-spacing:.2px;
+   box-shadow:0 14px 28px rgba(61,220,151,.35), inset 0 -2px 0 rgba(0,0,0,.15);
+   transition:transform .08s ease, box-shadow .2s ease;">
+  
+  <!-- Telegram logo from Wikipedia -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" 
+       alt="Telegram" 
+       style="width:22px;height:22px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25));" />
+
+  Join Private Group
+  <span aria-hidden="true" style="display:inline-flex;align-items:center;transform:translateX(0);transition:transform .2s ease;">➜</span>
+</a>
+  <script>
+    // simple hover nudge
+    (function(){var a=document.currentScript.previousElementSibling;
+      a.addEventListener('mouseenter',function(){a.lastElementChild.style.transform='translateX(4px)';});
+      a.addEventListener('mouseleave',function(){a.lastElementChild.style.transform='translateX(0)';});
+      a.addEventListener('mousedown',function(){a.style.transform='translateY(1px) scale(.995)';});
+      a.addEventListener('mouseup',function(){a.style.transform='translateY(0) scale(1)';});
+    })();
+  </script>
+
+<!-- UPI Image -->
+<div style="position:relative;z-index:1;margin-top:18px;text-align:center;">
+  <img src="/media/upi.webp" alt="UPI Payment"
+       style="max-width:240px;width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.35);opacity:.98;" />
+  
+  <p style="margin-top:10px;font-size:12px;color:rgba(241,241,241,0.7);font-weight:500;display:flex;
+          align-items:center;justify-content:center;gap:6px;line-height:1.4;">
+  🔒 Payments processed via manager 
+  <span style="color:#eaeaea;font-weight:600;display:inline-flex;align-items:center;">
+    Akash
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" 
+         alt="verified" style="width:16px;height:16px;margin-left:4px;vertical-align:middle;" />
+  </span>
+</p>
+</div>
+
+
+</div>
+
+<script>
+(function () {
+  // --- CONFIG ---
+  var MIN_MINUTES = 37;           // your chosen min
+  var MAX_MINUTES = 70;           // your chosen max
+  var RESET_THRESHOLD_MS = 30 * 1000; // reset when <= 30s
+  var START_BAR_PERCENT = 10;     // initial visual bar percent
+  var LOCAL_KEY = 'offerTimer_v1';// storage key - bump if you change storage format
+  var PULSE_DURATION = 160;
+
+  // --- ELEMENTS (keep names same as yours) ---
+  var tH = document.getElementById('t-h');
+  var tM = document.getElementById('t-m');
+  var tS = document.getElementById('t-s');
+  var urgencyBar = document.getElementById('urgencyBar');
+  var dealBadge = document.getElementById('dealBadge');
+  var ribbon = document.getElementById('ribbon');
+  var cta = document.querySelector('.subscription-card a[onclick]');
+  var dealPrice = document.getElementById('dealPrice');
+  var origPrice = document.getElementById('origPrice');
+
+  // --- STATE ---
+  var iv = null;
+  var PULSE_EL = tS || urgencyBar || dealBadge || ribbon || cta;
+  var state = {
+    deadline: 0,   // epoch ms
+    total: 0,      // ms
+    cycleId: ''    // random id per cycle
+  };
+
+  // --- HELPERS ---
+  function pad(n){ return n < 10 ? ('0' + n) : ('' + n); }
+
+  function randMinutesMs(min, max){
+    var mins = Math.floor(Math.random() * (max - min + 1)) + min;
+    return mins * 60 * 1000;
+  }
+
+  function pulse(el){
+    if(!el) return;
+    el.style.transform = 'scale(1.04)';
+    setTimeout(function(){ el.style.transform = 'scale(1)'; }, PULSE_DURATION);
+  }
+
+  function setUrgencyBarPct(pct){
+    if(!urgencyBar) return;
+    urgencyBar.style.width = pct + '%';
+  }
+
+  function saveState(){
+    try {
+      localStorage.setItem(LOCAL_KEY, JSON.stringify(state));
+    } catch(e){
+      // storage may fail in private mode — ignore gracefully
+    }
+  }
+
+  function loadState(){
+    try {
+      var raw = localStorage.getItem(LOCAL_KEY);
+      if (!raw) return false;
+      var s = JSON.parse(raw);
+      if (!s || !s.deadline || !s.total) return false;
+      state.deadline = s.deadline;
+      state.total = s.total;
+      state.cycleId = s.cycleId || '';
+      return true;
+    } catch(e){
+      return false;
+    }
+  }
+
+  function clearState(){
+    try { localStorage.removeItem(LOCAL_KEY); } catch(e){}
+    state.deadline = 0; state.total = 0; state.cycleId = '';
+  }
+
+  // --- startNewCycle with random-second offset between 20 and 35s ---
+  function startNewCycle(manual){
+    // create new cycle and persist it
+    var totalMs = randMinutesMs(MIN_MINUTES, MAX_MINUTES);
+
+    // Pick a random offset between 20 and 35 seconds (inclusive)
+    var minSec = 20;
+    var maxSec = 35;
+    var randomSecOffsetMs = (Math.floor(Math.random() * (maxSec - minSec + 1)) + minSec) * 1000;
+
+    // Ensure offset does not exceed totalMs-1000 (leave at least 1s remaining).
+    if (randomSecOffsetMs >= totalMs) {
+      randomSecOffsetMs = Math.max(0, totalMs - 1000);
+    }
+
+    // Deadline is shortened by the random offset so initial displayed seconds are 20..35
+    var newDeadline = Date.now() + totalMs - randomSecOffsetMs;
+
+    state.total = totalMs;
+    state.deadline = newDeadline;
+    state.cycleId = 'c-' + Math.random().toString(36).slice(2,10) + '-' + Date.now();
+    saveState();
+
+    // ensure urgency bar starts from START_BAR_PERCENT (visually)
+    setUrgencyBarPct(START_BAR_PERCENT);
+    pulse(PULSE_EL);
+
+    // (Do NOT change any of your text / prices / ribbons here)
+  }
+
+  function computeRemain(){
+    var now = Date.now();
+    var remain = Math.max(state.deadline - now, 0);
+    return remain;
+  }
+
+  function updateProgressVisual(now){
+    if (!urgencyBar || state.total === 0) return;
+    var elapsed = Math.min(Math.max(now - (state.deadline - state.total), 0), state.total);
+    var remain = Math.max(state.total - elapsed, 0);
+    var ratio = remain / state.total; // 1 -> full remain, 0 -> expired
+    // map ratio 1->START_BAR_PERCENT, 0->0
+    var pct = ratio * START_BAR_PERCENT;
+    setUrgencyBarPct(pct);
+  }
+
+  // --- tick uses Math.ceil for seconds to avoid immediate :59 artifact ---
+  function tick(){
+    if (!state.deadline || !state.total) {
+      // first-time: initialize a cycle and store it
+      startNewCycle('init');
+    }
+
+    var now = Date.now();
+    var remainMs = computeRemain();
+
+    updateProgressVisual(now);
+
+    if (remainMs <= 0) {
+      // expired while away — start a fresh cycle and persist
+      startNewCycle('expired');
+      return;
+    }
+
+    // Use totalSeconds rounded UP so we don't display :59 on round boundaries.
+    var totalSeconds = Math.ceil(remainMs / 1000);
+
+    var hrs = Math.floor(totalSeconds / 3600);
+    var mins = Math.floor((totalSeconds % 3600) / 60);
+    var secs = totalSeconds % 60;
+
+    if (tH) tH.textContent = pad(hrs);
+    if (tM) tM.textContent = pad(mins);
+    if (tS) tS.textContent = pad(secs);
+    pulse(tS);
+
+    // reset once when threshold reached
+    if (remainMs <= RESET_THRESHOLD_MS) {
+      // to avoid multiple resets from multiple tabs/windows, check stored cycleId and update it AFTER reset
+      // small visible delay so they perceive the 'last seconds'
+      setTimeout(function(){
+        // Reload state from storage for cross-tab safety
+        loadState();
+        var now2 = Date.now();
+        var rem2 = Math.max(state.deadline - now2, 0);
+        if (rem2 <= RESET_THRESHOLD_MS) {
+          startNewCycle('threshold-reset');
+        }
+      }, 800);
+    }
+  }
+
+  // --- INIT flow: try to restore state so returning visitors see real remaining ---
+  (function init(){
+    var restored = loadState();
+    if (!restored) {
+      // nothing stored: start fresh and persist
+      startNewCycle('fresh-init');
+    } else {
+      // we have stored deadline+total. If the stored deadline is already expired, start new cycle.
+      if (Date.now() >= state.deadline) {
+        startNewCycle('restored-expired');
+      } else {
+        // restored valid cycle; ensure bar starts at the mapped percent for current remain
+        updateProgressVisual(Date.now());
+      }
+    }
+
+    if (iv) clearInterval(iv);
+    iv = setInterval(tick, 1000);
+    tick();
+  })();
+
+  window.handlePayment = async function (e) {
+    if (e) e.preventDefault();
+    var buttons = document.querySelectorAll('[onclick*="handlePayment"]');
+    buttons.forEach(function(btn){
+      btn.dataset.originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="loading"></span> Processing...';
+      btn.style.pointerEvents = 'none';
+      btn.style.opacity = '0.8';
+    });
+    try {
+      var response = await fetch('/api/create-order', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({})
+      });
+      var data = await response.json();
+      if (!response.ok || !data.payment_session_id) throw new Error(data.error || 'Unable to create payment order.');
+      if (!window.Cashfree) throw new Error('Cashfree checkout SDK failed to load.');
+
+      var cashfree = Cashfree({mode: data.mode || 'sandbox'});
+      await cashfree.checkout({
+        paymentSessionId: data.payment_session_id,
+        redirectTarget: '_self'
+      });
+    } catch (err) {
+      alert(err.message || 'Payment could not be started. Please try again.');
+      buttons.forEach(function(btn){
+        btn.innerHTML = btn.dataset.originalText || 'Join Private Group';
+        btn.style.pointerEvents = '';
+        btn.style.opacity = '';
+      });
+    }
+  };
+
+  // Optional: expose API
+  window.__offerTimer = {
+    resetNow: function(){ startNewCycle('api'); },
+    clearStorage: function(){ clearState(); },
+    getState: function(){ return JSON.parse(JSON.stringify(state)); }
+  };
+
+})();
+</script>
+
+
+
+
+
+
+<!-- Demo Videos (URL-based) -->
+            <div class="demos">
+                <h2 class="section-title">Preview Content</h2>
+
+                <!-- Horizontal Scroller of demo videos (no input UI) -->
+                <div id="videoScroller" class="video-scroller"></div>
+                
+            </div>
+            
+            <!-- Testimonial -->
+        <div class="testimonial fade-in">
+            <div class="testimonial-avatar" style="overflow:hidden; padding:0;">
+    <img src="/media/picc.jpg" 
+         alt="Reviewer"
+         style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />
+  </div>
+            <div class="rating">Riya Sharma</div>
+            <div class="quote">"After the payment, you will receive the link to join my Telegram Group. Simply click the link to join. Please do not close this payment page until your transaction is successfully confirmed.💋"</div>
+            <div class="reviewer">
+  <a href="https://www.instagram.com/_eha_x_sharm_" 
+     target="_blank" 
+     style="color:#fff; text-decoration:none; font-weight:700;">
+    @_Riya_sharma_" Fanmint creator
+  </a>
+</div>
+        </div>
+            
+            
+            
+            
+            
+            <!-- Features -->
+            <div class="features">
+                <h2 class="section-title">Premium Benefits</h2>
+                <div class="features-grid">
+                    <div class="feature-item fade-in"><div class="feature-icon">🎥</div><div class="feature-text"><div class="feature-title">Exclusive Videos</div><div class="feature-desc">Premium content unavailable anywhere else</div></div></div>
+                    <div class="feature-item fade-in"><div class="feature-icon">📸</div><div class="feature-text"><div class="feature-title">4K Photos & Stories</div><div class="feature-desc">Ultra-high quality behind-the-scenes content</div></div></div>
+                    <div class="feature-item fade-in"><div class="feature-icon">💬</div><div class="feature-text"><div class="feature-title">Direct Messages</div><div class="feature-desc">Personal interactions and custom requests</div></div></div>
+                    <div class="feature-item fade-in"><div class="feature-icon">⚡</div><div class="feature-text"><div class="feature-title">Early Access</div><div class="feature-desc">Get new content 24 hours before everyone</div></div></div>
+                    <div class="feature-item fade-in"><div class="feature-icon">🎁</div><div class="feature-text"><div class="feature-title">Weekly Drops</div><div class="feature-desc">Surprise content bundles every Friday</div></div></div>
+                </div>
+            </div>
+
+            
+            
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <h2>Join My Private Group</h2>
+            <div class="stats-grid">
+                <div class="stat-item fade-in"><div class="stat-number">3K+</div><div class="stat-label">Active Subscribers</div></div>
+                <div class="stat-item fade-in"><div class="stat-number">100+</div><div class="stat-label">Premium Content</div></div>
+                <div class="stat-item fade-in"><div class="stat-number">Daily</div><div class="stat-label">Fresh Content</div></div>
+            </div>
+        </div>
+
+        
+
+        <!-- Footer CTA -->
+        <div class="footer-cta">
+            <h3 class="footer-title">Ready to Begin?</h3>
+            <p class="footer-subtitle">Join thousands of satisfied members enjoying exclusive premium content daily</p>
+            <a href="/api/create-order" class="cta-button" onclick="handlePayment(event)">Start Premium Access</a>
+        </div>
+    </div>
+<!-- Sticky Payment Bar (inline CSS) -->
+<div style="position:fixed; left:50%; transform:translateX(-50%); bottom:0; width:100%; max-width:430px; background:rgba(0,0,0,0.85); backdrop-filter:blur(16px); border-top:1px solid rgba(255,255,255,0.08); z-index:2000;">
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px calc(12px + env(safe-area-inset-bottom));">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div style="font-weight:900; font-size:20px; background:linear-gradient(135deg,#FF6B9D,#C766EF); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">₹09</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.7); line-height:1.2;">Telegram Private Group</div>
+    </div>
+    <a href="/api/create-order"
+       onclick="handlePayment(event)"
+       style="background:linear-gradient(135deg,#FF6B9D,#C766EF); color:#fff; text-decoration:none; font-weight:800; font-size:14px; padding:12px 18px; border-radius:999px; box-shadow:0 8px 24px rgba(255,107,157,0.35); white-space:nowrap;">
+       Join Private Group
+    </a>
+  </div>
+</div>
+
+<!-- Spacer so content isn't hidden behind the bar -->
+<div style="height:76px;"></div>
+
+    <script>
+        // --- Helpers: YouTube URL -> Embed URL ---
+        function toYouTubeEmbed(url) {
+            try {
+                const u = new URL(url);
+                if (!/(youtube\.com|youtu\.be)/.test(u.hostname)) return null;
+                let id = '';
+                if (u.hostname.includes('youtu.be')) {
+                    id = u.pathname.slice(1);
+                } else if (u.searchParams.get('v')) {
+                    id = u.searchParams.get('v');
+                } else if (u.pathname.includes('/embed/')) {
+                    id = u.pathname.split('/embed/')[1];
+                }
+                return id ? `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1` : null;
+            } catch { return null; }
+        }
+
+        // Demo videos array (start empty or pre-seed with examples)
+        const demoVideos = [
+            // ===== EDIT HERE: Hardcode your demo videos =====
+            // Examples (replace with your own):
+            { url: '/media/vi.mp4', title: 'Full Video in Group', duration: '0:45' },
+            { url: '/media/vi.mp4', title: 'Full Video in Group', duration: '1:12' },
+            { url: '/media/vi.mp4', title: 'Full Video in Group', duration: '1:12' },
+            { url: '/media/vi.mp4', title: 'Full Video in Group', duration: '1:12' },
+            { url: '/media/vi.mp4', title: 'Full Video in Group', duration: '0:45' },
+            { url: '/media/vi.mp4', title: 'Full Video in Group', duration: '0:45' },
+            
+            // ================================================
+        ];
+
+        function humanDurationFromVideo(el, fallback = '') {
+            if (!el || isNaN(el.duration) || !isFinite(el.duration)) return fallback;
+            const total = Math.round(el.duration);
+            const m = Math.floor(total / 60).toString();
+            const s = (total % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        function renderVideos() {
+            const scroller = document.getElementById('videoScroller');
+            scroller.innerHTML = '';
+
+            if (!demoVideos.length) {
+                const empty = document.createElement('div');
+                empty.style.cssText = 'opacity:0.7;font-size:14px;padding:8px 4px;';
+                empty.textContent = 'Add a few video URLs to show preview clips here. (MP4/WebM or YouTube links)';
+                scroller.appendChild(empty);
+                return;
+            }
+
+            demoVideos.forEach((item, i) => {
+                const card = document.createElement('div');
+                card.className = 'video-card fade-in';
+
+                const yt = toYouTubeEmbed(item.url);
+                if (yt) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = yt;
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.className = 'video-media';
+                    card.appendChild(iframe);
+                } else {
+                    const video = document.createElement('video');
+                    video.src = item.url;
+                    video.playsInline = true;
+                    video.controls = true;
+                    video.preload = 'metadata';
+                    video.muted = true;
+                    video.className = 'video-media';
+                    video.addEventListener('loadedmetadata', () => {
+                        // set duration label when known
+                        const dur = humanDurationFromVideo(video, item.duration || '');
+                        titleRow.querySelector('.video-duration').textContent = dur;
+                    });
+                    card.appendChild(video);
+                }
+
+                const overlay = document.createElement('div');
+                overlay.className = 'video-overlay';
+                const titleRow = document.createElement('div');
+                titleRow.innerHTML = `<div class="video-title">${item.title || 'Preview'}</div><div class="video-duration">${item.duration || ''}</div>`;
+                overlay.appendChild(titleRow);
+                card.appendChild(overlay);
+
+                scroller.appendChild(card);
+
+                // Staggered animation delay
+                card.style.transitionDelay = `${i * 0.08}s`;
+            });
+
+            // Ensure newly added cards fade in
+            requestAnimationFrame(() => {
+                document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+            });
+            // Locked / Premium card (always last)
+const locked = document.createElement('div');
+locked.className = 'video-card fade-in';
+locked.innerHTML = `
+  <div style="position:relative; width:100%; height:100%; overflow:hidden;">
+    <img src="https://niharikax.com/pvt/blurred.jpg"
+         alt="Premium locked"
+         style="width:100%; height:100%; object-fit:cover;
+                filter:blur(8px) brightness(0.5);
+                transform:scale(1.06);" />
+    <div style="position:absolute; inset:0;
+                background:linear-gradient(180deg,rgba(0,0,0,0.2),
+                                                    rgba(0,0,0,0.7));"></div>
+    <div style="position:absolute; top:50%; left:50%;
+                transform:translate(-50%,-50%);
+                display:flex; align-items:center; gap:10px;
+                padding:10px 14px; border-radius:999px;
+                background:rgba(0,0,0,0.6);
+                border:1px solid rgba(255,255,255,0.15);
+                font-weight:800;">
+      <span style="font-size:20px;">🔒</span><span>Premium</span>
+    </div>
+  </div>
+  <div class="video-overlay">
+    <div class="video-title">Join Private Group to Watch All Videos</div>
+  </div>
+`;
+scroller.appendChild(locked);
+        }
+
+        function addVideoFromInput() {
+            const urlInput = document.getElementById('video-url');
+            const titleInput = document.getElementById('video-title');
+            const url = (urlInput.value || '').trim();
+            if (!url) return;
+
+            demoVideos.push({ url, title: titleInput.value.trim() });
+            urlInput.value = '';
+            titleInput.value = '';
+            renderVideos();
+            hapticFeedback('light');
+            trackEvent('demo_video_added', { url });
+        }
+
+        if (!window.handlePayment) window.handlePayment = function(e){ if(e)e.preventDefault(); };
+
+        // Smooth scroll animations and fade-ins
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            // Seed with example if desired (comment out to start empty)
+            // demoVideos.push({ url: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', title: 'Lifestyle Vlog' });
+            // demoVideos.push({ url: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ', title: 'Travel Diary' });
+            renderVideos();
+
+            // Stagger effect for feature items
+            document.querySelectorAll('.feature-item').forEach((item, index) => item.style.transitionDelay = `${index * 0.1}s`);
+        });
+
+        // iOS-style haptic feedback simulation
+        function hapticFeedback(type = 'light') { if (navigator.vibrate) { const patterns = { light: 10, medium: 20, heavy: 50 }; navigator.vibrate(patterns[type] || 10); } }
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('cta-button') || e.target.closest('.feature-item')) hapticFeedback('light');
+        });
+
+        // Parallax effect for header
+        window.addEventListener('scroll', function() { const scrolled = window.pageYOffset; const header = document.querySelector('.header'); if (header) header.style.transform = `translateY(${scrolled * 0.5}px)`; });
+
+        // Smooth color transitions on avatar
+        let colorIndex = 0; const colors = [ 'linear-gradient(135deg, #FF6B9D 0%, #C766EF 100%)', 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)' ];
+        setInterval(() => { const profileImg = document.querySelector('.profile-img'); if (profileImg) { colorIndex = (colorIndex + 1) % colors.length; profileImg.style.background = colors[colorIndex]; } }, 3000);
+
+        // Analytics (stub)
+        function trackEvent(eventName, data = {}) { console.log('Analytics Event:', eventName, data); }
+        trackEvent('page_view', { page: 'premium_content', timestamp: new Date().toISOString(), user_agent: navigator.userAgent });
+
+        // Time in status bar
+        function updateTime() { const now = new Date(); const time = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' }); const timeElement = document.querySelector('.time'); if (timeElement) timeElement.textContent = time; }
+        updateTime(); setInterval(updateTime, 60000);
+
+        // PWA service worker (optional)
+        if ('serviceWorker' in navigator) { window.addEventListener('load', function() { navigator.serviceWorker.register('/sw.js').then(() => console.log('ServiceWorker registered')).catch(() => console.log('ServiceWorker registration failed')); }); }
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('video.video-media:not([poster])').forEach(v => {
+    v.preload = 'metadata';
+    v.muted = true;
+    v.addEventListener('loadedmetadata', () => {
+      // seek a tiny bit in so first frame is available
+      const grab = () => {
+        try {
+          const c = document.createElement('canvas');
+          c.width = v.videoWidth; c.height = v.videoHeight;
+          c.getContext('2d').drawImage(v, 0, 0, c.width, c.height);
+          const data = c.toDataURL('image/jpeg', 0.8);
+          if (data && data.length > 1000) v.setAttribute('poster', data);
+        } catch (e) { /* likely CORS; ignore */ }
+        v.currentTime = 0; // reset to start
+      };
+      const onSeeked = () => { grab(); v.removeEventListener('seeked', onSeeked); };
+      v.addEventListener('seeked', onSeeked);
+      // bump currentTime slightly to get a decodable frame
+      try { v.currentTime = 0.1; } catch(e) {}
+    }, { once: true });
+  });
+});
+</script>
+
+</body>
+</html>
